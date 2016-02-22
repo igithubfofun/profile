@@ -172,14 +172,28 @@
                     <hr class="star-light">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-offset-2">
-                    <p class="aboutContent"><img id="resume" src="img/portfolio/resume.png"></p>
-                </div>
-                <div class="col-lg-offset-2">
-                <a href="img/portfolio/resume.png" download>Download Resume</a>
-                </div>
+
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModalr" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-offset-5">
+                            <p class="aboutContent"><img id="resume" src="img/portfolio/resume.png"></p>
+                        </div>
+                        <div class="col-lg-offset-5">
+                        <a href="img/portfolio/resume.pdf" download>Download Resume</a>
+                        </div>
+                    </div>
+                    <!-- <img class="pic" src="img/portfolio/resume.png" class="img-responsive" alt=""> -->
+                </a>
             </div>
+
+
+
+
         </div>
     </section>
 
@@ -274,7 +288,7 @@
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="https://www.facebook.com/nuclearmetel" class="btn-social btn-outline" target="_top"><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/nuclearmetel" class="btn-social btn-outline" target="_new"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
                             <li>
                                 <a href="mailto:metelpatel@gmail.com?Subject=Would%20Love%20To%20Hire%20You!" target="_top" class="btn-social btn-outline"><i class="fa fa-google"></i></a>
@@ -309,6 +323,32 @@
     </div>
 
     <!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModalr" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Resume</h2>
+                            <hr class="star-primary">
+                            <ul class="list-inline item-details">
+                            <img src="img/portfolio/resume.png"/>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">

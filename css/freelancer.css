@@ -499,7 +499,16 @@ footer .footer-below {
 }
 
 #resume {
+  width:900px;
+  height:900px;
+  text-align:center;
+  border-radius: 10px;
+}
+
+.portfolio-modal .modal-content img {
   width:800px;
   height:800px;
-  text-align:center;
+  border:2px solid black;
+  border-radius:10px;
+  margin-left:-50px;
 }
