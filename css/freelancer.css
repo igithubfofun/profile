@@ -242,6 +242,8 @@ section.success a.active {
     position: relative;
     margin: 0 auto;
     max-width: 400px;
+    border:2px solid black;
+    border-radius: 5px;
 }
 
 .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
@@ -261,6 +263,7 @@ section.success a.active {
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
+
 }
 
 #portfolio .portfolio-item .portfolio-link .caption:hover {
@@ -505,7 +508,7 @@ footer .footer-below {
   border-radius: 10px;
 
 }
-.portfolio-modal .modal-content img {
+.portfolio-modal .modal-content .resume img {
   width:1200px;
   height:1200px;
   border:2px solid black;
