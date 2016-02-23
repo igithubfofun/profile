@@ -3,7 +3,8 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 body {
     overflow-x: hidden;
 
@@ -33,7 +34,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Ubuntu,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -99,7 +100,7 @@ header img {
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Ubuntu,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 2em;
     font-weight: 700;
 }
@@ -160,7 +161,7 @@ header .intro-text .skills {
 
 .navbar {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Ubuntu,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     background-color:#E9AB17;
     opacity: .9;
@@ -185,6 +186,7 @@ header .intro-text .skills {
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
   background-color:#15317E;
+  border-radius:10px;
 }
 
 section {
@@ -221,6 +223,7 @@ section.success a.active {
 }
 #portfolio {
   color:#15317E;
+
 }
 
 #contact{
@@ -235,6 +238,8 @@ section.success a.active {
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
+
+
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -242,16 +247,22 @@ section.success a.active {
     position: relative;
     margin: 0 auto;
     max-width: 400px;
-    border:2px solid black;
-    border-radius: 5px;
+
+
 }
 
 .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
   max-width:400px;
+  border:2px solid black;
 }
 
 .img-circle{
   max-width:200px;
+}
+
+#portfolio .portfolio-item .portfolio-link>img {
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 #portfolio .portfolio-item .portfolio-link .caption {
@@ -263,6 +274,8 @@ section.success a.active {
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
+
+
 
 }
 
@@ -279,24 +292,29 @@ section.success a.active {
     text-align: center;
     font-size: 20px;
     color: #fff;
+
 }
 
 #portfolio .portfolio-item .portfolio-link .caption .caption-content i {
     margin-top: -12px;
+
 }
 
 #portfolio .portfolio-item .portfolio-link .caption .caption-content h3,
 #portfolio .portfolio-item .portfolio-link .caption .caption-content h4 {
     margin: 0;
+
 }
 
 #portfolio * {
     z-index: 2;
+
 }
 
 @media(min-width:767px) {
     #portfolio .portfolio-item {
         margin: 0 0 30px;
+
     }
 }
 
@@ -426,21 +444,26 @@ footer .footer-below {
     background-clip: border-box;
     -webkit-box-shadow: none;
     box-shadow: none;
+
 }
 
 .portfolio-modal .modal-content h2 {
     margin: 0;
     font-size: 3em;
+
 }
 
 .portfolio-modal .modal-content img {
     margin-bottom: 30px;
     height:300px;
     width:400px;
+    border:2px solid black;
+    border-radius: 5px;
 }
 
 .portfolio-modal .modal-content .item-details {
     margin: 30px 0;
+
 }
 
 .portfolio-modal .close-modal {
@@ -481,6 +504,7 @@ footer .footer-below {
 .portfolio-modal .modal-backdrop {
     display: none;
     opacity: 0;
+
 }
 
 .pic {
