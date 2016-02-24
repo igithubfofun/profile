@@ -257,7 +257,8 @@ section.success a.active {
 }
 
 .img-circle{
-  max-width:200px;
+  max-width:300px;
+  height: 250px;
 }
 
 #portfolio .portfolio-item .portfolio-link>img {
