@@ -549,5 +549,11 @@ footer .footer-below {
   height:1200px;
   border:2px solid black;
   border-radius:10px;
-  margin-left:-250px;
+  text-align: center;
+}
+
+@media (max-width: 1500px) {
+  .portfolio-modal .modal-content .resume img {
+    width: 100%;
+  }
 }
