@@ -547,7 +547,11 @@ footer .footer-below {
   #resume{
     width:100%;
   }
+
+  .portfolio-modal .modal-content img {
+    width:100%;
 }
+
 
 .resumepreview {
   text-align: center;
