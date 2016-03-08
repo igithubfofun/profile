@@ -285,7 +285,8 @@ section.success a.active {
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
-
+    border-radius:10px;
+    display: inline-block;
 
 
 }
@@ -466,8 +467,8 @@ footer .footer-below {
 
 .portfolio-modal .modal-content img {
     margin-bottom: 30px;
-    height:300px;
-    width:400px;
+    height:800px;
+    width:800px;
     border:2px solid black;
     border-radius: 5px;
 }
@@ -541,9 +542,13 @@ footer .footer-below {
   height:400px;
   text-align:center;
   border-radius: 10px;
+  display:inline-block;
+}
+.aboutContent{
+  text-align:center;
 }
 
-@media (max-width: 1500px){
+@media (max-width: 1000px){
   #resume{
     width:100%;
   }
@@ -552,11 +557,6 @@ footer .footer-below {
     width:100%;
 }
 
-
-.resumepreview {
-  text-align: center;
-
-}
 .portfolio-modal .modal-content .resume img {
   width:1200px;
   height:1200px;
