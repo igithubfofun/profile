@@ -543,6 +543,12 @@ footer .footer-below {
   border-radius: 10px;
 }
 
+@media (max-width: 1500px){
+  #resume{
+    width:100%;
+  }
+}
+
 .resumepreview {
   text-align: center;
 
