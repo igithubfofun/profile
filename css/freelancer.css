@@ -467,8 +467,8 @@ footer .footer-below {
 
 .portfolio-modal .modal-content img {
     margin-bottom: 30px;
-    height:800px;
-    width:800px;
+    height:350px;
+    width:400px;
     border:2px solid black;
     border-radius: 5px;
 }
@@ -538,6 +538,14 @@ footer .footer-below {
 }
 
 #resume {
+  width:1000px;
+  height:1000px;
+  border:2px solid black;
+  border-radius:10px;
+  text-align: center;
+}
+
+#previewresume {
   width:400px;
   height:400px;
   text-align:center;
@@ -548,6 +556,7 @@ footer .footer-below {
   text-align:center;
 }
 
+
 @media (max-width: 1000px){
   #resume{
     width:100%;
@@ -557,13 +566,7 @@ footer .footer-below {
     width:100%;
 }
 
-.portfolio-modal .modal-content .resume img {
-  width:1200px;
-  height:1200px;
-  border:2px solid black;
-  border-radius:10px;
-  text-align: center;
-}
+
 
 @media (max-width: 1500px) {
   .portfolio-modal .modal-content .resume img {
