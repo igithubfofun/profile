@@ -570,9 +570,8 @@ footer .footer-below {
 
   .portfolio-modal .modal-content img {
     width:100%;
+  }
 }
-
-
 
 @media (max-width: 1500px) {
   .portfolio-modal .modal-content .resume img {
