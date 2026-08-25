@@ -288,7 +288,7 @@
                                 <a href="https://www.facebook.com/nuclearmetel" class="btn-social btn-outline" target="_new"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="mailto:metelpatel@gmail.com?Subject=Would%20Love%20To%20Hire%20You!" target="_top" class="btn-social btn-outline"><i class="fa fa-google"></i></a>
+                                <a href="#" id="emailLink" data-user="metelpatel" data-domain="gmail.com" data-subject="Would%20Love%20To%20Hire%20You!" target="_top" class="btn-social btn-outline"><i class="fa fa-google"></i></a>
                             </li>
                             <li>
                                 <a href="https://twitter.com/patelmetel" class="btn-social btn-outline" target="_new"><i class="fa fa-fw fa-twitter"></i></a>
@@ -574,6 +574,16 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
+
+    <!-- Assemble contact email link at runtime to keep the address out of the page source -->
+    <script>
+        (function() {
+            var link = document.getElementById('emailLink');
+            if (!link) { return; }
+            var address = link.getAttribute('data-user') + '@' + link.getAttribute('data-domain');
+            link.setAttribute('href', 'mailto:' + address + '?Subject=' + link.getAttribute('data-subject'));
+        })();
+    </script>
 
 </body>
 
