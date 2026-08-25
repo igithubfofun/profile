@@ -562,6 +562,12 @@ footer .footer-below {
     width:100%;
   }
 
+  #previewresume {
+    width:100%;
+    height:auto;
+    max-width:400px;
+  }
+
   .portfolio-modal .modal-content img {
     width:100%;
 }
