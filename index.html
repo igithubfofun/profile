@@ -3,6 +3,15 @@
 
 <head>
 
+    <script>
+        // Always land on top when the page is opened, even if the URL still
+        // carries a #section hash from a previous visit. Strip it before the
+        // browser gets a chance to auto-scroll to that anchor. Nav clicks set
+        // a fresh hash after load, so they still scroll to the right section.
+        if (window.location.hash) {
+            history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
+    </script>
     <meta name="google-site-verification" content="izWldBwi0grdUEpMQ-4xAQg6OjVAS9iIFdcX2chNmUk" />
     <meta property="og:description" content="Metel Patel || Web Developer || Life Developer || Strategist" />
     <meta charset="utf-8">
