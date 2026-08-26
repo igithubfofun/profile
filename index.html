@@ -1,540 +1,401 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
-
     <script>
-        // Always land on top when the page is opened, even if the URL still
-        // carries a #section hash from a previous visit. Strip it before the
-        // browser gets a chance to auto-scroll to that anchor. Nav clicks set
-        // a fresh hash after load, so they still scroll to the right section.
+        // Open at the top even if the URL still carries a #hash from a previous
+        // visit. Nav clicks set a fresh hash after load, so they still work.
         if (window.location.hash) {
             history.replaceState(null, "", window.location.pathname + window.location.search);
         }
+        // Apply the saved theme before first paint to avoid a flash.
+        try {
+            var t = localStorage.getItem("theme");
+            if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) { }
     </script>
-    <meta name="google-site-verification" content="izWldBwi0grdUEpMQ-4xAQg6OjVAS9iIFdcX2chNmUk" />
-    <meta property="og:description" content="Metel Patel || Web Developer || Life Developer || Strategist" />
+
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Metel Patel — Developer</title>
+    <meta name="description" content="Metel Patel — developer based in Austin, Texas. Selected projects, and how to get in touch.">
     <meta name="author" content="Metel Patel">
-    <meta name="title" content="Metel Patel">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a0a0f" media="(prefers-color-scheme: dark)">
 
-    <title>Metel Patel</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Metel Patel — Developer">
+    <meta property="og:description" content="Developer based in Austin, Texas. Selected projects, and how to get in touch.">
+    <meta property="og:image" content="https://igithubfofun.github.io/profile/img/og.jpg">
+    <meta property="og:url" content="https://igithubfofun.github.io/profile/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://igithubfofun.github.io/profile/">
 
-    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/portrait.jpg">
 
-    <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link rel='shortcut icon' href='img/portfolio/favicon.ico' />
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <link href="./mail/contact_me.php">
-
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body id="page-top" class="index">
+<body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" role="presentation"><span></span></div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#page-top">Metel Patel</a>
-            </div>
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="#top">
+                <span class="brand-mark" aria-hidden="true">MP</span>
+                <span class="brand-name">Metel Patel</span>
+            </a>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
+            <nav class="site-nav" id="site-nav" aria-label="Primary">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+            </nav>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-responsive img-circle" src="img/portfolio/mypic.jpg" alt="">
-                    <div class="intro-text">
-                        <span class="name">Metel Patel</span>
-                        <hr class="star-light">
-                        <span class="skills">Web Developer</span>
-                        <br>
-                        <h6>Always developing in more ways than one.</h6>
-                    </div>
-                </div>
+            <div class="header-actions">
+                <button class="icon-btn theme-toggle" type="button" aria-label="Switch colour theme" title="Switch theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4.2" />
+                        <path d="M12 2.6v2.2M12 19.2v2.2M4.3 4.3l1.6 1.6M18.1 18.1l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.3 19.7l1.6-1.6M18.1 5.9l1.6-1.6" />
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z" />
+                    </svg>
+                </button>
+
+                <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+                    aria-label="Open menu">
+                    <span class="bars" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Portfolio</h2>
-                    <hr class="star-primary">
-                </div>
+    <main id="main">
+
+        <!-- ============================ Hero ============================ -->
+        <section class="hero">
+            <div class="aurora" aria-hidden="true">
+                <span class="blob blob-1"></span>
+                <span class="blob blob-2"></span>
+                <span class="blob blob-3"></span>
             </div>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="pic" src="img/portfolio/calc.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="pic" src="img/portfolio/tictactoe.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="pic" src="img/portfolio/chatme.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="pic" src="img/portfolio/dohnuts.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="pic" src="img/portfolio/bb.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="pic" src="img/portfolio/ez.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <!-- <section id="contact"> -->
-      <!--   <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Contact Me</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2"> -->
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-        <!--           <div id="contactme">
+            <div class="wrap hero-inner">
+                <div class="hero-text">
+                    <p class="greeting" data-reveal>
+                        <span class="wave" aria-hidden="true">👋</span> Hi, I'm
+                    </p>
 
-                  </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
+                    <h1 data-reveal data-reveal-delay="1">
+                        <span class="gradient-text">Metel Patel</span>
+                    </h1>
 
-  <!-- Contact Section -->
-     <section id="contact">
-         <div class="container">
-             <div class="row">
-                 <div class="col-lg-12 text-center">
-                     <h2>Contact Me</h2>
-                     <hr class="star-primary">
-                 </div>
-             </div>
-             <div class="row">
-                 <div class="col-lg-8 col-lg-offset-2">
+                    <p class="tagline" data-reveal data-reveal-delay="2">
+                        I build
+                        <span class="rotator" aria-live="polite">
+                            <span class="rotator-word">web apps</span>
+                        </span>
+                    </p>
 
-                     <form name="sentMessage" id="contactForm" validate>
-                         <div class="row control-group">
-                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                 <label>Name</label>
-                                 <input type="text" class="form-control" name="name" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                                 <p class="help-block text-danger"></p>
-                             </div>
-                         </div>
-                         <div class="row control-group">
-                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                 <label>Email Address</label>
-                                 <input type="email" class="form-control" name="email" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                                 <p class="help-block text-danger"></p>
-                             </div>
-                         </div>
-                         <div class="row control-group">
-                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                 <label>Phone Number</label>
-                                 <input type="tel" class="form-control" name="phone" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                 <p class="help-block text-danger"></p>
-                             </div>
-                         </div>
-                         <div class="row control-group">
-                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                 <label>Message</label>
-                                 <textarea rows="5" class="form-control" name="message" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                 <p class="help-block text-danger"></p>
-                             </div>
-                         </div>
-                         <br>
-                         <div id="success"></div>
-                         <div class="row">
-                             <div class="form-group col-xs-12">
-                                 <button type="submit" value="Send" class="btn btn-success btn-lg">Send</button>
-                             </div>
-                         </div>
-                     </form>
-                 </div>
-             </div>
-         </div>
-     </section>
+                    <p class="hero-meta" data-reveal data-reveal-delay="3">
+                        <svg class="pin" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" />
+                            <circle cx="12" cy="10" r="2.6" />
+                        </svg>
+                        Austin, Texas
+                    </p>
 
-
-
-
-
-
-
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-
-                    <div class="footer-col col-md-12">
-                        <h3>Around the Web</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="https://www.facebook.com/nuclearmetel" class="btn-social btn-outline" target="_new"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" id="emailLink" data-user="metelpatel" data-domain="gmail.com" data-subject="Would%20Love%20To%20Hire%20You!" target="_top" class="btn-social btn-outline"><i class="fa fa-google"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/patelmetel" class="btn-social btn-outline" target="_new"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/metelpatel" class="btn-social btn-outline" target="_new"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/igithubfofun" class="btn-social btn-outline" target="_new"><i class="fa fa-github"></i></a>
-                            </li>
-                        </ul>
+                    <div class="hero-actions" data-reveal data-reveal-delay="4">
+                        <a class="btn btn-primary" href="#contact">
+                            Get in touch
+                            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M5 12h13M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a class="btn btn-ghost" href="#work">See my work</a>
                     </div>
-                    <div class="footer-col col-md-4">
 
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
+                    <ul class="social" aria-label="Profiles" data-reveal data-reveal-delay="5">
+                        <li>
+                            <a href="https://github.com/igithubfofun" target="_blank" rel="noopener noreferrer"
+                                aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/metelpatel" target="_blank" rel="noopener noreferrer"
+                                aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.6 4.78 6V21h-4v-5.5c0-1.31-.03-3-1.9-3-1.9 0-2.2 1.43-2.2 2.9V21h-4V9Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="email-link" href="#" data-user="metelpatel" data-domain="gmail.com"
+                                aria-label="Email">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M3 5.5h18c.55 0 1 .45 1 1V17.5c0 .55-.45 1-1 1H3c-.55 0-1-.45-1-1V6.5c0-.55.45-1 1-1Zm1.4 1.9L12 12.6l7.6-5.2H4.4Z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
+                <div class="hero-portrait" data-reveal data-reveal-delay="2">
+                    <div class="portrait-tilt" id="portraitTilt">
+                        <div class="portrait-glow" aria-hidden="true"></div>
+                        <picture>
+                            <source type="image/webp" srcset="img/portrait.webp 1x, img/portrait@2x.webp 2x">
+                            <img src="img/portrait.jpg" srcset="img/portrait.jpg 1x, img/portrait@2x.jpg 2x"
+                                width="640" height="640" alt="Portrait of Metel Patel" fetchpriority="high">
+                        </picture>
+                    </div>
                 </div>
             </div>
+
+            <a class="scroll-cue" href="#about" aria-label="Scroll to About">
+                <span class="mouse" aria-hidden="true"><span></span></span>
+            </a>
+        </section>
+
+        <!-- ============================ About =========================== -->
+        <section id="about" class="section">
+            <div class="wrap">
+                <p class="kicker" data-reveal>01 — About</p>
+                <div class="about-grid">
+                    <div data-reveal>
+                        <h2 class="section-title">Developer based in Austin.</h2>
+                        <p class="prose">
+                            I like building things for the web — turning an idea into something people can
+                            actually click on. A selection of what I've built is below, and the source for
+                            all of it is on GitHub.
+                        </p>
+                        <p class="prose">
+                            Always up for a good problem, a new stack, or a conversation about either.
+                        </p>
+                    </div>
+
+                    <aside class="stack-card" data-reveal data-reveal-delay="1">
+                        <h3>Worked with</h3>
+                        <ul class="tags">
+                            <li>JavaScript</li>
+                            <li>Node</li>
+                            <li>Express</li>
+                            <li>Ruby</li>
+                            <li>Rails</li>
+                            <li>MongoDB</li>
+                            <li>SQL</li>
+                            <li>REST APIs</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Git</li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================ Work ============================ -->
+        <section id="work" class="section section-alt">
+            <div class="wrap">
+                <p class="kicker" data-reveal>02 — Work</p>
+                <h2 class="section-title" data-reveal>Selected projects</h2>
+                <p class="prose section-lede" data-reveal>
+                    Projects I built while learning the craft. Source is on GitHub — the original hosted
+                    demos are long gone.
+                </p>
+
+                <div class="cards">
+
+                    <article class="card" data-reveal>
+                        <a class="card-media" href="https://github.com/igithubfofun/chat-challenge" target="_blank"
+                            rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                            <picture>
+                                <source type="image/webp" srcset="img/projects/chatme.webp">
+                                <img src="img/projects/chatme.jpg" width="800" height="500" loading="lazy"
+                                    decoding="async" alt="">
+                            </picture>
+                        </a>
+                        <div class="card-body">
+                            <h3><a href="https://github.com/igithubfofun/chat-challenge" target="_blank"
+                                    rel="noopener noreferrer">Chat Me Now</a></h3>
+                            <p>A real-time chat app built for a job application, then taken further for fun —
+                                including a Giphy API integration for inline images.</p>
+                            <p class="card-tags">JavaScript · Node · API integration</p>
+                        </div>
+                    </article>
+
+                    <article class="card" data-reveal data-reveal-delay="1">
+                        <a class="card-media" href="https://github.com/igithubfofun/beer_buddies" target="_blank"
+                            rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                            <picture>
+                                <source type="image/webp" srcset="img/projects/beerbuddies.webp">
+                                <img src="img/projects/beerbuddies.jpg" width="800" height="500" loading="lazy"
+                                    decoding="async" alt="">
+                            </picture>
+                        </a>
+                        <div class="card-body">
+                            <h3><a href="https://github.com/igithubfofun/beer_buddies" target="_blank"
+                                    rel="noopener noreferrer">Beer Buddies</a></h3>
+                            <p>A solo build, and the one I was proudest of — it meant writing my own API as
+                                well as consuming a third-party one.</p>
+                            <p class="card-tags">Node · REST · AJAX</p>
+                        </div>
+                    </article>
+
+                    <article class="card" data-reveal data-reveal-delay="2">
+                        <a class="card-media" href="https://github.com/igithubfofun/ezfeedback" target="_blank"
+                            rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                            <picture>
+                                <source type="image/webp" srcset="img/projects/ezfeedback.webp">
+                                <img src="img/projects/ezfeedback.jpg" width="800" height="500" loading="lazy"
+                                    decoding="async" alt="">
+                            </picture>
+                        </a>
+                        <div class="card-body">
+                            <h3><a href="https://github.com/igithubfofun/ezfeedback" target="_blank"
+                                    rel="noopener noreferrer">EZFeedBack</a></h3>
+                            <p>A way for early-stage businesses to collect customer feedback on physical
+                                products. Kept the logic on the backend where it belonged.</p>
+                            <p class="card-tags">JavaScript · Backend logic</p>
+                        </div>
+                    </article>
+
+                    <article class="card" data-reveal>
+                        <a class="card-media" href="https://github.com/igithubfofun/garden_app" target="_blank"
+                            rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                            <picture>
+                                <source type="image/webp" srcset="img/projects/gardengeek.webp">
+                                <img src="img/projects/gardengeek.jpg" width="800" height="500" loading="lazy"
+                                    decoding="async" alt="">
+                            </picture>
+                        </a>
+                        <div class="card-body">
+                            <h3><a href="https://github.com/igithubfofun/garden_app" target="_blank"
+                                    rel="noopener noreferrer">Garden Geek</a></h3>
+                            <p>A Rails app for tracking your gardens, with multi-user support via Devise.</p>
+                            <p class="card-tags">Ruby on Rails · Devise</p>
+                        </div>
+                    </article>
+
+                    <article class="card" data-reveal data-reveal-delay="1">
+                        <a class="card-media" href="https://github.com/igithubfofun/tictactoe" target="_blank"
+                            rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                            <picture>
+                                <source type="image/webp" srcset="img/projects/tictactoe.webp">
+                                <img src="img/projects/tictactoe.jpg" width="800" height="500" loading="lazy"
+                                    decoding="async" alt="">
+                            </picture>
+                        </a>
+                        <div class="card-body">
+                            <h3><a href="https://github.com/igithubfofun/tictactoe" target="_blank"
+                                    rel="noopener noreferrer">Tic Tac Toe</a></h3>
+                            <p>My first solo project, two weeks into immersive study. Leaned on callbacks to
+                                keep the code DRY.</p>
+                            <p class="card-tags">JavaScript · jQuery</p>
+                        </div>
+                    </article>
+
+                    <article class="card" data-reveal data-reveal-delay="2">
+                        <a class="card-media" href="https://github.com/igithubfofun/calculator" target="_blank"
+                            rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                            <picture>
+                                <source type="image/webp" srcset="img/projects/calculator.webp">
+                                <img src="img/projects/calculator.jpg" width="800" height="500" loading="lazy"
+                                    decoding="async" alt="">
+                            </picture>
+                        </a>
+                        <div class="card-body">
+                            <h3><a href="https://github.com/igithubfofun/calculator" target="_blank"
+                                    rel="noopener noreferrer">The Ultimate Calculator</a></h3>
+                            <p>One of my earliest projects, pair-programmed — a calculator with a running
+                                log of everything you've worked out.</p>
+                            <p class="card-tags">SASS · jQuery · Bootstrap</p>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="work-more" data-reveal>
+                    <a class="btn btn-ghost" href="https://github.com/igithubfofun?tab=repositories" target="_blank"
+                        rel="noopener noreferrer">
+                        More on GitHub
+                        <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h13M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- =========================== Contact ========================== -->
+        <section id="contact" class="section">
+            <div class="wrap contact-inner">
+                <p class="kicker" data-reveal>03 — Contact</p>
+                <h2 class="section-title" data-reveal>Let's build something.</h2>
+                <p class="prose" data-reveal>
+                    Whether it's an opportunity, a question, or just to say hello — my inbox is open.
+                </p>
+
+                <div class="contact-card" data-reveal data-reveal-delay="1">
+                    <button class="email-copy" type="button" id="copyEmail" data-user="metelpatel"
+                        data-domain="gmail.com" aria-label="Copy email address to clipboard">
+                        <span class="email-text" id="emailText">click to reveal email</span>
+                        <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="9" y="9" width="11" height="11" rx="2" />
+                            <path d="M5 15V5a2 2 0 0 1 2-2h10" />
+                        </svg>
+                    </button>
+
+                    <div class="contact-actions">
+                        <a class="btn btn-primary email-link" href="#" data-user="metelpatel" data-domain="gmail.com">
+                            Email me
+                            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M5 12h13M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a class="btn btn-ghost" href="https://www.linkedin.com/in/metelpatel" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <p>&copy; <span id="year">2026</span> Metel Patel</p>
+            <p class="footer-note">Built from scratch — no frameworks.</p>
+            <a class="to-top" href="#top">
+                Back to top
+                <svg class="arrow up" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h13M12 5l7 7-7 7" />
+                </svg>
+            </a>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-    <!-- Portfolio Modals -->
-
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>The Ultimate Calculator</h2>
-                            <hr class="star-primary">
-                            <a target="_new" href="http://metelscalculator.bitballoon.com/"><img src="img/portfolio/calc.png" class="img-responsive img-centered" alt=""></a>
-                            <p>This was among one of my first projects I pair programmed with another developer. Click <a target="_new" href="http://metelscalculator.bitballoon.com/">here</a>
-                            to view the calculator and <a target="_new" href="https://github.com/igithubfofun/calculator">here</a> to view it in GitHub. </p>
-                            <ul class="list-inline item-details">
-                                <li>Technologies Used:
-                                    <strong>HTML, CSS, JQuery, JS, Bootstrap, Responsive Design
-                                    </strong>
-                                </li>
-                                <br><br>
-                                <li>Date:
-                                    <strong>December 2015
-                                    </strong>
-                                </li>
-
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Tic Tac Toe</h2>
-                            <hr class="star-primary">
-                            <a target="_new" href="http://metelstictactoe.bitballoon.com/"><img src="img/portfolio/tictactoe.png" class="img-responsive img-centered" alt=""></a>
-                            <p>This was my first solo project that I had accomplished after 2 weeks of immersive web development. I am most proud of utilizing callbacks to make my code DRY. Click <a target="_new" href="http://metelstictactoe.bitballoon.com/">here</a> to view/play the game,
-                            and <a target="_new" href="https://github.com/igithubfofun/tictactoe">here</a> to view it in GitHub.</p>
-                            <ul class="list-inline item-details">
-                                <li>Technologies Used:
-                                    <strong>HTML, CSS, JavaScript, JQuery, Bootstrap
-                                    </strong>
-                                </li>
-                                <br><br>
-                                <li>Date:
-                                    <strong>December 2015
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Chat Me Now</h2>
-                            <hr class="star-primary">
-                            <a target="_new" href="https://chat-me-now.herokuapp.com/"><img src="img/portfolio/chatme.png" class="img-responsive img-centered" alt=""></a>
-                            <p>I originally created this project for an application process for a job. I had more fun with it and deployed it on heroku. I integrated the Giphy api into it. View it <a target="_new" href="https://chat-me-now.herokuapp.com/">here</a>, and <a target="_new" href="https://github.com/igithubfofun/chat-challenge">here</a> to view it in GitHub. </p>
-                            <ul class="list-inline item-details">
-                                <li>Technologies Used:
-                                    <strong>Node, JS, Websockets, Socket.io, HTML, CSS
-                                    </strong>
-                                </li>
-                                <br><br>
-                                <li>Date:
-                                    <strong>July 2016
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>DOHnuts!</h2>
-                            <hr class="star-primary">
-                            <a target="_new" href="https://dohnuts.herokuapp.com/"><img src="img/portfolio/dohnuts.png" class="img-responsive img-centered" alt=""></a>
-                            <p>This project was completed using the CRUD methods using a RESTful API. I had pair programmed with one other developer, you can view the project <a target="_new" href="https://dohnuts.herokuapp.com/">here</a>, and on GitHub <a target="_new" href="https://github.com/igithubfofun/DOHnuts">here</a>.</p>
-                            <ul class="list-inline item-details">
-                                <li>Technogies Used:
-                                    <strong>Node, API, AJAX requests, JQuery, JS, Mongo
-                                    </strong>
-                                </li>
-                                <br><br>
-                                <li>Date:
-                                    <strong>January 2016
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Beer Buddies</h2>
-                            <hr class="star-primary">
-                            <a target="_new" href="https://beer-buddies.herokuapp.com/"><img src="img/portfolio/bb.png" class="img-responsive img-centered" alt=""></a>
-                            <p>This project was completed solo. I was most proud of this project, as I was able to create my own API as well as access a 3rd party API.
-                            You can view the project <a target="_new" href="https://beer-buddies.herokuapp.com/">here</a>, and on GitHub <a target="_new" href="https://github.com/igithubfofun/beer_buddies">here</a></p>
-                            <ul class="list-inline item-details">
-                                <li>Technologies Used:
-                                    <strong>Node, AJAX, JQuery, JS, Mongo, 3rd Party API, Proxy, Underscore.js, Bcrypt
-                                    </strong>
-                                </li>
-                                <br><br>
-                                <li>Date:
-                                    <strong>February 2016
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>EZFeedBack</h2>
-                            <hr class="star-primary">
-                            <a target="_new" href="http://ezfeedback.herokuapp.com/"><img src="img/portfolio/ez.png" class="img-responsive img-centered" alt=""></a>
-                            <p>This was a solo project completed by myself. The idea was for startup businesses to get feedback from customers on tangible products.
-                            I am proud of doing all my logic in the backend instead of frontend. You can see the project <a target="_new" href="http://ezfeedback.herokuapp.com/">here</a>, and
-                            on GitHub <a target="_new" href="https://github.com/igithubfofun/ezfeedback">here</a>.</p>
-                            <ul class="list-inline item-details">
-                                <li>Technologies Used:
-                                    <strong>Node, JS, Mongo, Bcrypt, QR Codes
-                                    </strong>
-                                </li>
-                                <br><br>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">March 2016</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
-
-    <!-- Assemble contact email link at runtime to keep the address out of the page source -->
-    <script>
-        (function() {
-            var link = document.getElementById('emailLink');
-            if (!link) { return; }
-            var address = link.getAttribute('data-user') + '@' + link.getAttribute('data-domain');
-            link.setAttribute('href', 'mailto:' + address + '?Subject=' + link.getAttribute('data-subject'));
-        })();
-    </script>
-
+    <script src="js/main.js"></script>
 </body>
 
 </html>
