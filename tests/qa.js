@@ -156,9 +156,11 @@ const VIEWPORTS = [
         check("phone number absent from raw HTML", !/469-?432-?1255/.test(rawHtml));
         const href = await page.getAttribute(".contact-actions .email-link", "href");
         check("email link assembled at runtime", href === "mailto:metelpatel@gmail.com", `href=${href}`);
-        const shown = await page.textContent("#emailText");
-        check("email revealed in contact card", shown.trim() === "metelpatel@gmail.com", `text=${shown}`);
+        const beforeClick = await page.textContent("#emailText");
+        check("email NOT shown before click", beforeClick.trim() !== "metelpatel@gmail.com", `text=${beforeClick}`);
         await ctxCopyTest(page);
+        const afterClick = await page.textContent("#emailText");
+        check("email revealed in contact card after click", afterClick.trim() === "metelpatel@gmail.com", `text=${afterClick}`);
         await page.close();
 
         async function ctxCopyTest(p) {

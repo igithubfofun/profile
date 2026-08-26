@@ -90,9 +90,7 @@
         }
     );
 
-    // Reveal the address in the contact card once JS has assembled it.
     var emailText = document.getElementById("emailText");
-    if (emailText && EMAIL) emailText.textContent = EMAIL;
 
 
     /* --- Toast --------------------------------------------------------------- */
@@ -117,6 +115,8 @@
     if (copyBtn) {
         copyBtn.addEventListener("click", function () {
             if (!EMAIL) return;
+
+            if (emailText) emailText.textContent = EMAIL;
 
             function done() {
                 toast("Email copied to clipboard ✨");
