@@ -5,9 +5,19 @@
  */
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+html {
+    scroll-behavior: smooth;
+}
 body {
     overflow-x: hidden;
 
+}
+
+/* Offset anchor-linked sections so the fixed navbar never covers their top */
+#portfolio,
+#about,
+#contact {
+    scroll-margin-top: 90px;
 }
 
 @media (max-width: 1000px) {

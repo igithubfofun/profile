@@ -4,18 +4,9 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-// document.domain = "https://";
-
-$(function() {
-    $('body').on('click', '.page-scroll a', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
+// Page scrolling: rely on native anchor navigation + CSS scroll-behavior/
+// scroll-margin-top (see freelancer.css) so the fixed navbar never covers
+// the target section, regardless of the mobile menu's open/closed state.
 
 // Floating label headings for the contact form
 $(function() {
