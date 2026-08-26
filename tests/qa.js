@@ -74,7 +74,7 @@ const VIEWPORTS = [
 
     /* ---------- 3. Navigation anchors land below the sticky header ---------- */
     for (const [name, opts] of [["desktop", { viewport: { width: 1280, height: 900 } }], ["mobile", devices["iPhone 13"]]]) {
-        for (const id of ["about", "work", "contact"]) {
+        for (const id of ["about", "experience", "work", "contact"]) {
             const page = await browser.newPage(opts);
             await page.goto(BASE + "/", { waitUntil: "networkidle", timeout: 30000 });
             if (name === "mobile") { await page.click(".nav-toggle"); await page.waitForTimeout(300); }
@@ -255,6 +255,21 @@ const VIEWPORTS = [
         check("all _blank links use rel=noopener", unsafeTarget.length === 0, unsafeTarget.map(l => l.href).join(", "));
         const ghLinks = links.filter(l => /github\.com\/igithubfofun/.test(l.href));
         check("project links point at real repos", ghLinks.length >= 6, `found=${ghLinks.length}`);
+        await page.close();
+    }
+
+    /* ---------- 12. Experience section reflects real employers ---------- */
+    {
+        const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+        await page.goto(BASE + "/", { waitUntil: "networkidle", timeout: 30000 });
+        const text = await page.evaluate(() => document.getElementById("experience").innerText);
+        for (const co of ["Meta", "Dropbox", "Bazaarvoice", "General Assembly"]) {
+            check(`experience mentions ${co}`, text.includes(co));
+        }
+        // No fabricated dates: no bare 4-digit years or mm/yy ranges anywhere
+        // in the experience section, since none were supplied.
+        const hasDates = /\b(19|20)\d{2}\b|\b\d{1,2}\/\d{2,4}\b/.test(text);
+        check("no invented dates in experience section", !hasDates, text.match(/\b(19|20)\d{2}\b|\b\d{1,2}\/\d{2,4}\b/g));
         await page.close();
     }
 

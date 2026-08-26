@@ -153,7 +153,7 @@
 
     var rotator = document.querySelector(".rotator-word");
     if (rotator && !reduceMotion.matches) {
-        var words = ["web apps", "REST APIs", "clean interfaces", "side projects"];
+        var words = ["fraud prevention", "risk mitigation", "anti-abuse strategy", "compliance"];
         var i = 0;
 
         setInterval(function () {
