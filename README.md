@@ -42,11 +42,13 @@ Everything is plain HTML in `index.html`. The likely edits:
 | --- | --- |
 | Tagline words | `words` array in `js/main.js` |
 | Bio | `#about` section |
-| Skills | `.stack-card .tags` |
+| Focus areas / skills | `.stack-card .tags` |
+| Work history | `.timeline-item` entries in `#experience` |
 | Projects | `.cards` in `#work` |
 
-To add an **Experience** section, copy the `#about` section's markup, give it a
-new `id`, and add a matching link to the header nav.
+To add another employer to `#experience`, copy a `.timeline-item` block and
+give it a `.timeline-meta` (company) and bullet list. Job titles and dates are
+only shown where they were explicitly supplied — don't invent either.
 
 ## QA
 
